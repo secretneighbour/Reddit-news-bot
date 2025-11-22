@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230D1117' /%3E%3Cg fill='none' stroke='%23D29922' stroke-width='4'%3E%3Cpath d='M32 20 v24' /%3E%3Cpath d='M22 34 h20' /%3E%3Ccircle cx='32' cy='20' r='4' fill='%23D29922' /%3E%3Ccircle cx='22' cy='34' r='3' fill='%23D29922' /%3E%3Ccircle cx='42' cy='34' r='3' fill='%23D29922' /%3E%3C/g%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit News Bot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --font-sans: 'Lato', sans-serif;
+        --font-display: 'Playfair Display', serif;
+        --font-mono: 'Source Code Pro', monospace;
+        
+        --color-background: #0D1117;
+        --color-surface-1: #161B22;
+        --color-text-primary: #E6EDF3;
+        --color-text-secondary: #7D8590;
+        --color-accent: #D29922; /* Amber/Gold */
+        --color-border: #21262D;
+      }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--color-background);
+        color: var(--color-text-primary);
+      }
+      .font-display { font-family: var(--font-display); }
+      .font-mono { font-family: var(--font-mono); }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-background);
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--color-border);
+        border-radius: 5px;
+        border: 2px solid var(--color-background);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #31363E;
+      }
+
+      /* News Ticker Animation */
+      .ticker-wrapper:hover .ticker-content {
+        animation-play-state: paused;
+      }
+
+      @keyframes ticker-scroll {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

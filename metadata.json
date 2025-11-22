@@ -1,0 +1,5 @@
+{
+  "name": "Reddit News Bot",
+  "description": "An automated bot to fetch, filter, and schedule news articles for posting to Reddit.",
+  "requestFramePermissions": []
+}
